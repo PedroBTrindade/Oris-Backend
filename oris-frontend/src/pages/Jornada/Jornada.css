@@ -1,0 +1,395 @@
+/* ================================================
+   Jornada — Histórico e Tendências Emocionais
+   ================================================ */
+
+.jornada {
+  padding: 24px 20px 0;
+}
+
+/* Header */
+.jornada-header {
+  margin-bottom: 24px;
+}
+
+.jornada-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--texto-principal);
+}
+
+.jornada-subtitulo {
+  font-size: 0.85rem;
+  color: var(--texto-terciario);
+  margin-top: 4px;
+}
+
+/* Abas */
+.jornada-abas {
+  display: flex;
+  background: var(--bg-card);
+  border-radius: var(--raio-lg);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 20px;
+  border: 1px solid var(--borda);
+}
+
+.jornada-aba {
+  flex: 1;
+  padding: 9px 8px;
+  border-radius: var(--raio-md);
+  background: transparent;
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.jornada-aba:hover {
+  background: var(--roxo-pastel);
+  color: var(--roxo-medio);
+}
+
+.jornada-aba--ativa {
+  background: var(--grad-card-hero);
+  color: #fff;
+  box-shadow: var(--sombra-suave);
+}
+
+.jornada-loading,
+.jornada-vazio {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--texto-terciario);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* -----------------------------------------------
+   REGISTROS
+----------------------------------------------- */
+.jornada-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jornada-card {
+  background: var(--bg-card);
+  border: 1px solid var(--cor-borda);
+  border-left: 3px solid var(--cor-emocao);
+  border-radius: var(--raio-md);
+  padding: 14px 16px;
+  box-shadow: var(--sombra-suave);
+}
+
+.jornada-card-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.jornada-card-emoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.jornada-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.jornada-card-emocao {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--cor-emocao);
+}
+
+.jornada-card-data {
+  font-size: 0.75rem;
+  color: var(--texto-terciario);
+}
+
+.jornada-card-publico {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ciano);
+  background: var(--ciano-pastel);
+  border: 1px solid var(--ciano-suave);
+  border-radius: var(--raio-full);
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.jornada-card-deletar {
+  background: transparent;
+  color: var(--texto-terciario);
+  padding: 4px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: var(--transicao);
+}
+
+.jornada-card-deletar:hover {
+  color: var(--cor-horrivel);
+  background: #FEF2F2;
+}
+
+.jornada-card-deletar svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Confirmação de exclusão inline */
+.jornada-confirmar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.jornada-confirmar span {
+  font-size: 0.78rem;
+  color: var(--texto-secundario);
+}
+
+.jornada-confirmar-sim,
+.jornada-confirmar-nao {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  padding: 3px 10px;
+  border-radius: var(--raio-full);
+  transition: var(--transicao);
+}
+
+.jornada-confirmar-sim {
+  background: var(--cor-horrivel);
+  color: #fff;
+}
+
+.jornada-confirmar-nao {
+  background: var(--bg-pagina);
+  border: 1px solid var(--borda);
+  color: var(--texto-secundario);
+}
+
+.jornada-card-descricao {
+  font-size: 0.875rem;
+  color: var(--texto-principal);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.jornada-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.jornada-card-tag {
+  background: var(--cor-fundo);
+  color: var(--cor-emocao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-full);
+  padding: 2px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------
+   ATIVIDADE
+----------------------------------------------- */
+.atividade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.atividade-card {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.atividade-icone {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.atividade-valor {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--roxo-medio);
+  line-height: 1;
+}
+
+.atividade-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+}
+
+.atividade-descricao {
+  font-size: 0.72rem;
+  color: var(--texto-terciario);
+}
+
+/* -----------------------------------------------
+   TENDÊNCIAS
+----------------------------------------------- */
+.tendencias {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Mensagem acolhedora */
+.tendencias-mensagem {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--cor-tendencia);
+  border-radius: var(--raio-md);
+  padding: 16px;
+  font-size: 0.9rem;
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+/* Gráfico de barras */
+.tendencias-grafico {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  padding: 20px;
+  box-shadow: var(--sombra-suave);
+}
+
+.tendencias-secao-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.tendencias-barras {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tendencias-barra-linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tendencias-barra-emoji {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.tendencias-barra-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-secundario);
+  width: 52px;
+  flex-shrink: 0;
+}
+
+.tendencias-barra-track {
+  flex: 1;
+  height: 10px;
+  background: var(--bg-pagina);
+  border-radius: var(--raio-full);
+  overflow: hidden;
+}
+
+.tendencias-barra-fill {
+  height: 100%;
+  border-radius: var(--raio-full);
+  transition: width 0.6s ease;
+  min-width: 4px;
+}
+
+.tendencias-barra-valor {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.tendencias-barra-pct {
+  font-size: 0.72rem;
+  color: var(--texto-terciario);
+  width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Destaque emoção mais frequente */
+.tendencias-destaque {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-emocao);
+  border-radius: var(--raio-lg);
+  padding: 16px;
+}
+
+.tendencias-destaque-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.tendencias-destaque-titulo {
+  font-size: 0.75rem;
+  color: var(--texto-terciario);
+  font-weight: 600;
+}
+
+.tendencias-destaque-valor {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--cor-emocao);
+  font-family: var(--fonte-titulo);
+}
+
+.tendencias-destaque-contagem {
+  margin-left: auto;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--cor-emocao);
+  font-family: var(--fonte-titulo);
+}
+
+/* Aviso não-diagnóstico */
+.tendencias-aviso {
+  font-size: 0.75rem;
+  color: var(--texto-terciario);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 0 8px;
+}

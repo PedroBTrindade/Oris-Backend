@@ -1,0 +1,72 @@
+/* ================================================
+   Footer — Barra de Navegação Inferior ORIS
+   ================================================ */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(79, 70, 229, 0.08);
+}
+
+/* Botão de aba */
+.footer-aba {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 24px;
+  border-radius: var(--raio-lg);
+  background: transparent;
+  color: var(--texto-terciario);
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-aba:hover {
+  color: var(--roxo-suave);
+  background: var(--roxo-pastel);
+}
+
+/* Aba ativa — tom mais claro e roxo */
+.footer-aba--ativa {
+  color: var(--roxo-medio);
+  background: var(--roxo-pastel);
+}
+
+[data-tema="escuro"] .footer-aba--ativa {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--roxo-claro);
+}
+
+/* Ícone SVG */
+.footer-icone {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icone svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

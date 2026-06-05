@@ -1,0 +1,278 @@
+/* ================================================
+   ORIS — Estilos Globais e Variáveis CSS
+   Identidade visual inspirada na estrela ORIS:
+   roxo profundo + ciano/teal + dourado suave
+   ================================================ */
+
+/* Importa fontes modernas do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* -----------------------------------------------
+   VARIÁVEIS — Tema Claro (padrão)
+----------------------------------------------- */
+:root {
+  /* Paleta principal inspirada na estrela ORIS */
+  --roxo-escuro:    #3730A3;
+  --roxo-medio:     #4F46E5;
+  --roxo-suave:     #8B5CF6;
+  --roxo-claro:     #C4B5FD;
+  --roxo-pastel:    #EDE9FE;
+
+  --ciano:          #06B6D4;
+  --ciano-suave:    #67E8F9;
+  --ciano-pastel:   #ECFEFF;
+
+  --dourado:        #F59E0B;
+  --dourado-suave:  #FCD34D;
+  --dourado-pastel: #FEF3C7;
+
+  /* Cores das emoções */
+  --cor-horrivel:   #EF4444;
+  --cor-ruim:       #F97316;
+  --cor-neutro:     #94A3B8;
+  --cor-bom:        #22C55E;
+  --cor-otimo:      #EAB308;
+
+  /* Fundos e superfícies */
+  --bg-pagina:      #F7F4FF;
+  --bg-card:        #FFFFFF;
+  --bg-card-hover:  #F8F7FF;
+
+  /* Textos */
+  --texto-principal: #1E1B4B;
+  --texto-secundario: #6B7280;
+  --texto-terciario:  #9CA3AF;
+
+  /* Bordas */
+  --borda:          #E5E7EB;
+  --borda-roxo:     #DDD6FE;
+
+  /* Gradientes */
+  --grad-header:    linear-gradient(135deg, #3730A3 0%, #4F46E5 50%, #06B6D4 100%);
+  --grad-card-hero: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+  --grad-star:      linear-gradient(135deg, #A78BFA 0%, #67E8F9 100%);
+
+  /* Sombras */
+  --sombra-suave:   0 2px 8px rgba(79, 70, 229, 0.08);
+  --sombra-media:   0 4px 16px rgba(79, 70, 229, 0.12);
+  --sombra-forte:   0 8px 32px rgba(79, 70, 229, 0.18);
+
+  /* Tipografia */
+  --fonte-titulo:   'Quicksand', sans-serif;
+  --fonte-corpo:    'Nunito', sans-serif;
+
+  /* Bordas arredondadas */
+  --raio-sm:  8px;
+  --raio-md:  12px;
+  --raio-lg:  16px;
+  --raio-xl:  24px;
+  --raio-full: 9999px;
+
+  /* Transições */
+  --transicao: all 0.2s ease;
+}
+
+/* -----------------------------------------------
+   VARIÁVEIS — Tema Escuro
+----------------------------------------------- */
+[data-tema="escuro"] {
+  --bg-pagina:      #161320;
+  --bg-card:        #211D2E;
+  --bg-card-hover:  #2A2540;
+
+  --texto-principal:   #F3F4F6;
+  --texto-secundario:  #C4B5FD;
+  --texto-terciario:   #9CA3AF;
+
+  --borda:          #3D3658;
+  --borda-roxo:     #4C3A7A;
+
+  --roxo-pastel:    #2E2850;
+  --ciano-pastel:   #0E2730;
+  --dourado-pastel: #2A2010;
+
+  --sombra-suave:   0 2px 8px rgba(0, 0, 0, 0.3);
+  --sombra-media:   0 4px 16px rgba(0, 0, 0, 0.4);
+  --sombra-forte:   0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* -----------------------------------------------
+   RESET E BASE
+----------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--bg-pagina);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove list styles padrão */
+ul, ol { list-style: none; }
+
+/* Links sem decoração padrão */
+a { text-decoration: none; color: inherit; }
+
+/* Botões base */
+button {
+  font-family: var(--fonte-corpo);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transicao);
+}
+
+/* Inputs base */
+input, textarea, select {
+  font-family: var(--fonte-corpo);
+  outline: none;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio-sm);
+  padding: 10px 14px;
+  background: var(--bg-card);
+  color: var(--texto-principal);
+  transition: var(--transicao);
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--roxo-suave);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* -----------------------------------------------
+   UTILITÁRIOS GLOBAIS
+----------------------------------------------- */
+
+/* Cards padrão */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--raio-lg);
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra-suave);
+  padding: 20px;
+  transition: var(--transicao);
+}
+
+.card:hover {
+  box-shadow: var(--sombra-media);
+}
+
+/* Botão primário */
+.btn-primario {
+  background: var(--grad-card-hero);
+  color: #fff;
+  border-radius: var(--raio-full);
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-primario:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+}
+
+/* Botão secundário */
+.btn-secundario {
+  background: transparent;
+  color: var(--roxo-suave);
+  border: 1.5px solid var(--roxo-suave);
+  border-radius: var(--raio-full);
+  padding: 11px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-secundario:hover {
+  background: var(--roxo-pastel);
+}
+
+/* Botão de perigo */
+.btn-perigo {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: #fff;
+  border-radius: var(--raio-full);
+  padding: 12px 24px;
+  font-weight: 700;
+}
+
+.btn-perigo:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Avatar automático */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-card-hero);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: var(--fonte-titulo);
+  flex-shrink: 0;
+}
+
+.avatar-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 1.5rem;
+}
+
+/* Tag de emoção */
+.tag-emocao {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--raio-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Mensagem de erro */
+.erro-texto {
+  color: var(--cor-horrivel);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* Container central para páginas públicas */
+.pagina-publica {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grad-header);
+  padding: 20px;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--roxo-claro);
+  border-radius: 3px;
+}

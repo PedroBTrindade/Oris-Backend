@@ -1,0 +1,20 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Backend Spring
+oris-backend/target/
+oris-backend/out/
+oris-backend/.idea/
+
+# Frontend React
+oris-frontend/node_modules/
+oris-frontend/dist/
+oris-frontend/build/
+oris-frontend/.idea/
+
+# Logs
+*.log
+
+# Variáveis de ambiente
+.env

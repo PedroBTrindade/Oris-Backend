@@ -1,0 +1,19 @@
+/* ================================================
+   Layout — Container Principal das Páginas Internas
+   ================================================ */
+
+.layout {
+  min-height: 100vh;
+  background: var(--bg-pagina);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteúdo principal com espaço para o footer fixo */
+.layout-conteudo {
+  flex: 1;
+  padding-bottom: 80px; /* altura do footer + margem */
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}

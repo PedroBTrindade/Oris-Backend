@@ -1,0 +1,128 @@
+/* ================================================
+   Home — Página Principal do ORIS
+   ================================================ */
+
+.home {
+  padding: 24px 20px 0;
+}
+
+/* Header com saudação */
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.home-header-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-saudacao {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  font-weight: 500;
+}
+
+.home-username {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--texto-principal);
+}
+
+/* Pergunta */
+.home-pergunta {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home-pergunta p {
+  font-size: 1rem;
+  color: var(--texto-secundario);
+  font-weight: 500;
+}
+
+/* Seletor de emoções */
+.home-emocoes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.home-emocao-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 12px;
+  border-radius: var(--raio-lg);
+  background: var(--bg-card);
+  border: 1.5px solid var(--cor-borda);
+  min-width: 72px;
+  transition: all 0.2s ease;
+  box-shadow: var(--sombra-suave);
+}
+
+.home-emocao-btn:hover {
+  background: var(--cor-fundo);
+  border-color: var(--cor-emocao);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.home-emocao-btn:active {
+  transform: translateY(0);
+}
+
+/* Emoji da emoção */
+.home-emocao-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.home-emocao-emoji--destaque {
+  font-size: 2.2rem;
+  transform: scale(1.15);
+}
+
+/* Label da emoção */
+.home-emocao-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--texto-secundario);
+  white-space: nowrap;
+}
+
+.home-emocao-btn:hover .home-emocao-label {
+  color: var(--cor-emocao);
+}
+
+/* Feed público */
+.home-feed-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  margin-bottom: 14px;
+}
+
+.home-feed-loading,
+.home-feed-vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--texto-terciario);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.home-feed-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

@@ -1,0 +1,271 @@
+/* ================================================
+   Configurações — Página de Configurações do Usuário
+   ================================================ */
+
+.config {
+  padding: 24px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.config-header {
+  margin-bottom: 4px;
+}
+
+.config-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--texto-principal);
+}
+
+/* Cards de seção */
+.config-card {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  padding: 20px;
+  box-shadow: var(--sombra-suave);
+}
+
+.config-secao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--roxo-medio);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.config-item-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+}
+
+.config-item-desc {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* Perfil */
+.config-perfil {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.config-avatar {
+  flex-shrink: 0;
+}
+
+.config-perfil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.config-perfil-nome {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--texto-principal);
+  font-family: var(--fonte-titulo);
+}
+
+.config-perfil-tipo {
+  font-size: 0.8rem;
+  color: var(--texto-terciario);
+}
+
+.config-perfil-status {
+  font-size: 0.82rem;
+  color: var(--texto-secundario);
+  font-weight: 600;
+}
+
+/* Aparência */
+.config-tema {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.config-tema-toggle {
+  padding: 9px 20px;
+  border-radius: var(--raio-full);
+  background: var(--roxo-pastel);
+  color: var(--roxo-medio);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  border: 1.5px solid var(--borda-roxo);
+  transition: var(--transicao);
+  white-space: nowrap;
+}
+
+.config-tema-toggle:hover {
+  background: var(--roxo-medio);
+  color: #fff;
+}
+
+/* Privacidade */
+.config-btn-privacidade {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--raio-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.config-btn-privacidade--publico {
+  background: var(--grad-card-hero);
+  color: #fff;
+  box-shadow: var(--sombra-suave);
+}
+
+.config-btn-privacidade--publico:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.config-btn-privacidade--privado {
+  background: transparent;
+  border: 1.5px solid var(--borda);
+  color: var(--texto-secundario);
+}
+
+.config-btn-privacidade--privado:hover {
+  background: var(--bg-pagina);
+}
+
+/* Logout */
+.config-btn-logout {
+  width: 100%;
+  padding: 13px;
+  border-radius: var(--raio-full);
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.25);
+  transition: var(--transicao);
+}
+
+.config-btn-logout:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── MODAIS ── */
+.config-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 27, 75, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+.config-modal {
+  background: var(--bg-card);
+  border-radius: var(--raio-xl);
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: var(--sombra-forte);
+}
+
+.config-modal-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--texto-principal);
+  margin-bottom: 10px;
+}
+
+.config-modal-texto {
+  font-size: 0.875rem;
+  color: var(--texto-secundario);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.config-modal-input {
+  margin-bottom: 8px;
+}
+
+.config-modal-erro {
+  font-size: 0.82rem;
+  color: var(--cor-horrivel);
+  margin-bottom: 12px;
+}
+
+.config-modal-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.config-modal-cancelar {
+  flex: 1;
+  padding: 11px;
+  border-radius: var(--raio-full);
+  background: transparent;
+  border: 1.5px solid var(--borda);
+  color: var(--texto-secundario);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.config-modal-cancelar:hover {
+  background: var(--bg-pagina);
+}
+
+.config-modal-confirmar {
+  flex: 1;
+  padding: 11px;
+  border-radius: var(--raio-full);
+  background: var(--grad-card-hero);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.config-modal-confirmar:hover {
+  opacity: 0.9;
+}
+
+.config-modal-sair {
+  flex: 1;
+  padding: 11px;
+  border-radius: var(--raio-full);
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.config-modal-sair:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.config-modal-sair:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

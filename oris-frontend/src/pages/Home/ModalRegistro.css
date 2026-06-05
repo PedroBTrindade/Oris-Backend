@@ -1,0 +1,186 @@
+/* ================================================
+   ModalRegistro — Modal de Registro Emocional
+   ================================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 27, 75, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 200;
+  padding: 0;
+  animation: overlay-entra 0.2s ease;
+}
+
+@keyframes overlay-entra {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-caixa {
+  background: var(--bg-card);
+  border-radius: var(--raio-xl) var(--raio-xl) 0 0;
+  width: 100%;
+  max-width: 680px;
+  padding: 28px 24px 36px;
+  max-height: 88vh;
+  overflow-y: auto;
+  animation: modal-sobe 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modal-sobe {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Cabeçalho */
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.modal-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.modal-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--cor-emocao);
+}
+
+.modal-subtitulo {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  margin-top: 2px;
+}
+
+/* Seções */
+.modal-secao {
+  margin-bottom: 20px;
+}
+
+.modal-secao-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.modal-opcional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--texto-terciario);
+}
+
+/* Tags */
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-tag {
+  padding: 6px 14px;
+  border-radius: var(--raio-full);
+  background: var(--bg-pagina);
+  border: 1.5px solid var(--borda);
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.modal-tag:hover {
+  border-color: var(--cor-emocao);
+  color: var(--cor-emocao);
+}
+
+.modal-tag--ativa {
+  background: var(--cor-emocao);
+  border-color: var(--cor-emocao);
+  color: #fff;
+}
+
+/* Textarea */
+.modal-textarea {
+  resize: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  min-height: 80px;
+}
+
+.modal-contador {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--texto-terciario);
+  margin-top: 4px;
+}
+
+.modal-erro {
+  color: var(--cor-horrivel);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+/* Botões */
+.modal-botoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal-btn-cancelar {
+  flex: 1;
+  padding: 13px;
+  border-radius: var(--raio-full);
+  background: transparent;
+  border: 1.5px solid var(--borda);
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--fonte-corpo);
+  transition: var(--transicao);
+}
+
+.modal-btn-cancelar:hover {
+  background: var(--bg-pagina);
+}
+
+.modal-btn-salvar {
+  flex: 2;
+  padding: 13px;
+  border-radius: var(--raio-full);
+  background: var(--cor-emocao);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: var(--transicao);
+}
+
+.modal-btn-salvar:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.modal-btn-salvar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
