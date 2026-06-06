@@ -6,10 +6,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/**
- * Configuração de CORS (Cross-Origin Resource Sharing).
- * Permite que o frontend React (rodando em localhost:3000) acesse o backend.
- */
+import java.util.List;
+
 @Configuration
 public class CorsConfig {
 
@@ -17,24 +15,25 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Permite requisições do frontend React em desenvolvimento
-        config.addAllowedOrigin("http://localhost:5173");
+        // ✅ Permite tanto local quanto produção no Render
+        config.setAllowedOrigins(List.of(
+            "http://localhost:5173",
+            "https://oris-frontend.onrender.com"  // ← substitua pela URL real
+        ));
 
-        // Permite todos os métodos HTTP necessários para a API REST
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
         config.addAllowedMethod("OPTIONS");
 
-        // Permite todos os headers
         config.addAllowedHeader("*");
-
-        // Permite cookies e credenciais
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/**", config);
+
+        // ✅ Cobre todas as rotas, não só /api/**
+        source.registerCorsConfiguration("/**", config);
 
         return new CorsFilter(source);
     }
