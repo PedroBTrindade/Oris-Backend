@@ -25,23 +25,21 @@ public class AuthDTOs {
 
     // DTO de entrada para cadastro
     @Data
-    public static class CadastroRequest {
+public static class CadastroRequest {
+    @NotBlank(message = "Username é obrigatório")
+    @Size(min = 3, max = 50, message = "Username deve ter entre 3 e 50 caracteres")
+    private String username;
 
-        @NotBlank(message = "Username é obrigatório")
-        @Size(min = 3, max = 50, message = "Username deve ter entre 3 e 50 caracteres")
-        private String username;
+    @NotBlank(message = "Senha é obrigatória")
+    @Pattern(
+        regexp = "^(?=.*[a-zA-Z])[\\S]{8,}$",  // ✅ \\S aceita qualquer char sem espaço, incluindo @#!
+        message = "a senha deve possuir no mínimo 8 caracteres com a presença de ao menos uma letra"
+    )
+    private String senha;
 
-        // Validação: mínimo 8 chars com ao menos uma letra
-        @NotBlank(message = "Senha é obrigatória")
-        @Pattern(
-            regexp = "^(?=.*[a-zA-Z]).{8,}$",
-            message = "a senha deve possuir no mínimo 8 caracteres com a presença de ao menos uma letra"
-        )
-        private String senha;
-
-        @NotBlank(message = "Confirmação de senha é obrigatória")
-        private String confirmacaoSenha;
-    }
+    @NotBlank(message = "Confirmação de senha é obrigatória")
+    private String confirmacaoSenha;
+}
 
     // DTO de saída após login bem-sucedido
     @Data
