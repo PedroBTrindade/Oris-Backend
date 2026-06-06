@@ -83,7 +83,7 @@ public class AuthService {
      *  - Senha validada pelo @Pattern no DTO
      */
     public LoginResponse cadastrar(CadastroRequest request) {
-        String username = request.getUsername().trim().toLowerCase();
+        String username = request.getUsername().trim();
 
         // Impede criação do admin via cadastro
         if (username.equals("admin")) {
