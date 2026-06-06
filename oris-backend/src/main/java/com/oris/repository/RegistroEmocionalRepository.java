@@ -43,6 +43,6 @@ public interface RegistroEmocionalRepository extends JpaRepository<RegistroEmoci
     List<Object[]> contarPorEmocaoDesde(@Param("inicio") LocalDateTime inicio);
 
     // Registros da semana agrupados por dia e emoção (dashboard admin)
-    @Query("SELECT DAYOFWEEK(r.registradoEm), r.emocao, COUNT(r) FROM RegistroEmocional r WHERE r.registradoEm >= :inicio GROUP BY DAYOFWEEK(r.registradoEm), r.emocao")
-    List<Object[]> tendenciaSemanal(@Param("inicio") LocalDateTime inicio);
+    @Query("SELECT EXTRACT(DOW FROM CAST(r.registradoEm AS date)), r.emocao, COUNT(r) FROM RegistroEmocional r WHERE r.registradoEm >= :inicio GROUP BY EXTRACT(DOW FROM CAST(r.registradoEm AS date)), r.emocao")
+List<Object[]> tendenciaSemanal(@Param("inicio") LocalDateTime inicio);
 }
